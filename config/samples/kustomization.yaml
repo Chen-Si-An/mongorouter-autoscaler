@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- autoscale_v1alpha1_mongorouterautoscaler.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

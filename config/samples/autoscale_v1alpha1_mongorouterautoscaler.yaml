@@ -1,0 +1,9 @@
+apiVersion: autoscale.mongodb.io/v1alpha1
+kind: MongoRouterAutoscaler
+metadata:
+  labels:
+    app.kubernetes.io/name: mongorouter-autoscaler
+    app.kubernetes.io/managed-by: kustomize
+  name: mongorouterautoscaler-sample
+spec:
+  # TODO(user): Add fields here
