@@ -62,3 +62,8 @@ type MongoRouterAutoscalerList struct {
 	metav1.ListMeta `json:"metadata,omitempty"`
 	Items           []MongoRouterAutoscaler `json:"items"`
 }
+
+// Register the MongoRouterAutoscaler types with the scheme.
+func init() {
+	SchemeBuilder.Register(&MongoRouterAutoscaler{}, &MongoRouterAutoscalerList{})
+}

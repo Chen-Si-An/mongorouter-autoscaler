@@ -1,0 +1,19 @@
+apiVersion: autoscale.mongodb.io/v1alpha1
+kind: MongoRouterAutoscaler
+metadata:
+  name: mongos-autoscaler
+spec:
+  targetRef:
+    name: my-mongodb-sharded-mongos
+    namespace: default
+  scaleBounds:
+    minReplicas: 1
+    maxReplicas: 3
+  policy:
+    cpuTargetPercent: 75
+    tolerancePercent: 10
+    window: 2m
+    step: 1
+    cooldownSeconds: 300
+  prometheus:
+    url: http://prometheus-operated.monitoring.svc:9090
